@@ -217,7 +217,7 @@ with st.sidebar:
     st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
     st.markdown("**🗓 Horizon**")
     horizon = st.radio("", ["2035", "2050"], horizontal=True,
-                       index=0 if data['params'].get('horizon') == '2035' else 1)
+                       index=0 if data.get('params', {}).get('horizon', '2035') == '2035' else 1)
 
     st.markdown('<div class="sidebar-section">', unsafe_allow_html=True)
     st.markdown("**🚗 Électrification du parc**")
